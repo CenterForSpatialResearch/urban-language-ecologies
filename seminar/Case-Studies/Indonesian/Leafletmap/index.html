@@ -1,0 +1,104 @@
+<html>
+<head>
+  <title> NYC Indo</title>
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
+  <link rel="stylesheet" href="css/MarkerCluster.css">
+  <link rel="stylesheet" href="css/MarkerCluster.Default.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/leaflet.awesome-markers.css">
+  
+
+  <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js">  </script>
+  <script src="js/leaflet.markercluster.js"></script>
+  <script src="js/jquery-2.1.1.min.js"></script>
+  <script src="js/leaflet.awesome-markers.js"></script>
+  
+  <style>
+    #map{ width: 1200px; height: 600px; }
+  </style>
+</head>
+<body>
+
+
+
+  <div id="map"></div>
+
+   <script>
+
+  // initialize the map
+
+  var map = L.map('map', {
+    center: [40.72, -73.73], 
+    zoom: 11
+  });
+
+  // load a tile layer
+      L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.{ext}',
+    {
+      attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>',
+      maxZoom: 15,
+      minZoom: 4,
+      ext: 'png'
+    }).addTo(map);
+
+
+   
+
+// Permanent Space marker
+$.getJSON("data/PS_latlng.geojson",function(Data){
+      	var psMarker = L.AwesomeMarkers.icon({
+    		prefix:'fa',
+    		icon:'building',
+    		iconColor:'red',
+    	});
+
+      	var PS = L.geoJson(Data,{
+    	  pointToLayer: function(feature, latlng){
+    		 var psmarker = L.marker(latlng,{icon: psMarker});
+    		 psmarker.bindPopup("<a href='" + feature.properties.Video + "'>" + feature.properties.Video + "</a>" + '<br/>' + feature.properties.Name + '<br/>' + feature.properties.Category);
+    		 return psmarker;
+     		}
+     	}).addTo(map);
+     })
+
+// Temporary Space marker
+$.getJSON("data/TS_latlng.geojson",function(Data){
+      	var tsMarker = L.AwesomeMarkers.icon({
+    		prefix:'fa',
+    		icon:'building',
+    		iconColor:'black',
+    	});
+
+    	  var TS = L.geoJson(Data,{
+    	   pointToLayer: function(feature, latlng){
+    	   var tsmarker = L.marker(latlng,{icon: tsMarker});
+    	       tsmarker.bindPopup("<a href='" + feature.properties.Video + "'>" + feature.properties.Video + "</a>" + '<br/>' + feature.properties.Name + '<br/>' + feature.properties.Category);
+    		   return tsmarker;
+    	   }
+
+
+
+//"<a href='" + feature.properties.Video + "'>" + feature.properties.Video + "</a>"
+
+//"<a <object data='"+ feature.properties.Video + "'>" + feature.properties.Video + " width="300" height="210"></object> </a>"
+
+//'<object data="http://www.youtube.com/embed/W7qWa52k-nE" width="300" height="210"></object>' 
+
+
+      }).addTo(map);
+
+ 
+      });
+
+
+
+
+  </script>
+  </body>
+  </html>
+
+
+
+
+
+

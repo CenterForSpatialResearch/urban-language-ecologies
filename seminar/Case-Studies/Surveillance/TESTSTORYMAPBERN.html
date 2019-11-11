@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title></title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.37.0/mapbox-gl.js'></script> 
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'> </script> 
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.37.0/mapbox-gl.css' rel='stylesheet' /> 
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+        .hover-image {
+            position:fixed;
+            left: 150px
+            top: 800px;
+            display: none}
+        .attaqwa {
+            position:absolute;
+            right: 0;
+            top:350px;
+            width:18px;
+            height:112px;
+            z-index: 2;
+            padding: 0;
+}
+
+
+    </style>
+</head>
+<body>
+
+<style>
+#map {
+    position: fixed;
+    width:50%;
+}
+#features {
+    width: 50%;
+    margin-left: 50%;
+    font-family: sans-serif;
+    overflow-y: scroll;
+    background-color: #fafafa;
+}
+section {
+    padding:  25px 50px;
+    line-height: 25px;
+    border-bottom: 1px solid #ddd;
+    opacity: 0.25;
+    font-size: 13px;
+}
+section.active {
+    opacity: 1;
+}
+section:last-child {
+    border-bottom: none;
+    margin-bottom: 200px;
+}
+</style>
+
+<div id='map'></div>
+
+
+
+<!-- 
+<img id="hoverImage" src="http://imgur.com/bp48sYN.png" class="hover-image" height="300" z-index="2"> <img>
+<img id= "attaqwa2" src="http://imgur.com/WMPkc62.png" class="hover-image" height="300" z-index="2"> <img>
+
+<img id= "Razaimg1" src="http://imgur.com/gSOdmuG.png" class="hover-image" height="300" z-index="2"> <img>
+
+<img id= "Razaimg2" src="http://imgur.com/Gpy3WGo.png" class="hover-image" height="300" z-index="2"> <img>
+
+<img id= "Razaimg3" src="http://imgur.com/UQKBLjk.png" class="hover-image" height="300" z-index="2"> <img>
+
+<img id= "Razaimg4" src="http://imgur.com/ocg0018.png" class="hover-image" height="300" z-index="2"> <img>
+
+<img id= "Razaimg5" src="http://imgur.com/9ApyAGx.png" class="hover-image" height="300" z-index="2"> <img>
+<img id= "Razaimg6" src="http://imgur.com/3CRlSsZ.png" class="hover-image" height="300" z-index="2"> <img>
+<img id= "omar1" src="http://imgur.com/3CRlSsZ.png" class="hover-image" height="300" z-index="2"> <img>
+<img id= "omar2" src="http://imgur.com/Gpy3WGo.png" class="hover-image" height="300" z-index="2"> <img>
+<img id= "omar3" src="http://imgur.com/iIQcztk.png" class="hover-image" height="300" z-index="2"> <img>
+<img id= "omar4" src="http://imgur.com/NFATlML.png" class="hover-image" height="300" z-index="2"> <img> -->
+
+
+<div id='features'>
+    <section id='baker' class='active'>
+        <h3>Case Study: Introduction</h3>
+        <p>All of incidents involving surveillance in Raza v. City of New York took place in Brooklyn, NY, particularly in the neighborhoods of Crown Heights, Gravesend and Brighton Beach.</p>
+    </section>
+
+    <section id='court'>
+        <h3>Overview of the Court Case</h3>
+        <p>Proceedings of Raza v. City of New York were held in Brooklyn at the United States Eastern District Court.</p>
+    </section>
+
+    <section id='nypdint'>
+    <br></br>
+        <h3>NYPD Intelligence Division</h3>
+        <p>The NYPD Intelligene division hosted the now defunct Special Demographics Unit and has recruited several informants, including Shamiur Rahman, Bilal and others who have not been named.
+        </p>
+    </section>
+
+    <section id='nypdpt79'>
+        <h3>NYPD 79th Precinst</h3>
+        <p>
+        The 79th Precinct set up a surveillence camera outside of Masjid At-Taqwa. When the mosque complained, it was merely relocated accross the street, still pointed at the mosque.
+</p>
+        <br></br><br></br><br></br>
+    </section>
+
+     <section id='Masjida1'>
+       <h3>Plaintiffs in the Case:</h3>
+        <h4>Masjid At-Taqwa</h4>
+        <p> In 2004 or 2005 a surveillence camera installed outside Masjid At-Taqwsa that pointed directly at the entrance of the mosque.
+        <img src="http://i.imgur.com/RiFx3Yy.jpg" alt="Masjid At-Taqwa Mosque" style="width:200px;height:200px;">
+        </p>
+
+    </section>
+
+    <section id='Masjida2'>
+       <h3>PLAINTIFFS in the Case:</h3>
+        <h4>Masjid At-Taqwa</h4>
+        <p>Police informant Shamiur Rahman began attending the mosque and on one occasion questioned congregants about 9/11, saying Muslims "should take action and do something.""</p>
+        <img src="http://imgur.com/nElQT81.png" alt="Masjid At-Taqwa Mosque" style="width:200px;height:200px;">
+    </section>
+
+    <section id='nypdpt62'>
+        <h3>NYPD 62nd Precinst</h3>
+        <p>
+        The 62nd Precinct sent plainclothes officers to Al-Ansar Center several times to question and provoke Hassan Raza.</p>
+        <br></br><br></br><br></br>
+    </section>
+
+    <section id='Raza1'>
+    <br></br>
+        <h3>Imam Raza </h3>
+        <h4></h4>
+        <p>Then, In late 2009, two plainclothes NYPD officers visited Masjid Al-Ansar. They asked Imama Hassan Raza for his driver's license, copying down his information and saying that there were "confusions" with his identification number.</p>
+        <img src="http://imgur.com/79I9EU4.png" alt="Masjid At-Taqwa Mosque" style="width:200px;height:200px;">
+    </section>
+    <section id='Raza2'>
+    <br></br>
+        <h3>PLAINTIFFS in the Case: </h3>
+        <h4>Raza</h4>
+        <p><!--After Imam Raza's encounter with the police in 2009, he upgraded the video equipment he was using to record his sermons and purchased external hard drives to save the data. The mosque, Masjid Al-Ansar, took on the costs to protect Imam from having his words taken out of context. All topics that could be construed or fabricated as "controversy" were filtered out of Raza's sermons.--> Then, Imam Raza moved books from a closing mosque into Masjid Al-Ansar, and only one day later was confronted with "a complaint" about a double-parked car by two plainclothes NYPD officers from the 62nd precint. They asked to look around the mosque, "just to make sure." Imam Raza said that he would need to speak to the board of the mosque before allowing them to look around.</p>
+        <img src="http://imgur.com/hWSF1hi.png" alt="Masjid At-Taqwa Mosque" style="width:200px;height:200px;">
+    </section>
+    <section id='Raza3'>
+    <br></br>
+        <h3>PLAINTIFFS in the Case: </h3>
+        <h4>Raza</h4>
+        <p>Plainclothes officers returned to the mosque in 2011, claiming to want to "get to know the community." The continued presence of the NYPD prompted the mosque's leadership to host a civil rights workshop to inform congregants of their rights.</p>
+        <img src="http://imgur.com/AYjfsom.png" alt="Masjid At-Taqwa Mosque" style="width:200px;height:200px;">
+    </section>
+
+    <section id='Raza4'>
+    <br></br>
+        <h3>PLAINTIFFS in the Case: </h3>
+        <h4>Raza</h4>
+        <p>Newcomers joined the mosque in early 2012, and seemed to Imam Raza to be feigning their interest in Islam.</p>
+        <img src="http://imgur.com/PGaR9cJ.png" alt="Masjid At-Taqwa Mosque" style="width:200px;height:200px;">
+    </section>
+    <section id='Raza5'>
+    <br></br>
+        <h3>PLAINTIFFS in the Case: </h3>
+        <h4>Raza</h4>
+        <p>After late evening prayers one night, Imam Raza was closing the mosque when an unknown man entered. He appeared nervous, breathing heavily, and asked Raza his views on Afghanistan and Iraq and on how Muslims should "deal with Christians and Jews," recording the answers with his phone. The man asked for a copy of the Qu'ran and exlaimed that he wanted to become a Muslim immediately, both behaviors that struck the Imam as strange for someone genuinely interested in converting.</p>
+        <img src="http://imgur.com/62MPI4A.png" alt="Masjid At-Taqwa Mosque" style="width:200px;height:200px;">
+    </section>
+    <section id='Raza6'>
+    <br></br>
+        <h3>PLAINTIFFS in the Case: </h3>
+        <h4>Raza</h4>
+        <p>Masjid Al-Ansar held a workshop about da'wa, or inviting people to Islam, in July or August 2012. A late newcomer became confrontational and, in Imam Raza's opinion, dismissive, during a practice exercise. When Raza addressed his behavior, the man became angry and disruptive. This man, Raza later found out, was Shamiur Rahman.</p>
+        <img src="http://imgur.com/aM5YrDl.png" alt="Masjid At-Taqwa Mosque" style="width:200px;height:200px;">
+    </section>
+
+    <section id='eli1'>
+        <h3>PLAINTIFFS in the Case:</h3>
+        <h4>Elishawy</h4>
+        <p> In 2004, NYPD officers questioned Elshinawy's congregants about him and the content of the sermons he had delivered at Brooklyn College. He was a student at there at the time. His lectures were attended by several suspected undercover police officers. He was approached in 2006 by someone who introduces himself as Bilal. Bilal told Elshinawy that he was "tired of talking" and wanted to "do something" for Islam. Elshinawy told him to channel his anger into exemplifying Islamic manners and Bilal stopped attending Elshinawy's lectures.</p>
+    </section>
+
+    <section id='eli2'>
+       <h3>PLAINTIFFS in the Case:</h3>
+        <h4>Elishawy</h4>
+        <p>In 2005, Elshinawy is befriended by Kamil Pasha, another undercover NYPD officer. He attended several community events with him and organized a paintball trip with him on behalf of the Brooklyn College Islamic Society. 
+        In 2008, Elshinawy was approached at work by an NYPD officer-- Detective O'Gara-- asking about a missing person.</p>
+        <br></br>
+        In 2012, Shamiur Rahman started attending Elshinawy's lectures. 
+    </section>
+
+    <section id='eli3'>
+        <h3>PLAINTIFFS in the Case:</h3>
+        <h4>Elishawy</h4>
+
+        In late 2009 or early 2010 Detective O'Gara calls and asks Elshinawy for a meeting. Elshinawy refuses to meet without an attorney. 
+
+        In late 2010, Detective O'Gara leaves a message on Elshinawy's answering machine aksing for a meeting.
+    </section>
+
+    <section id='Dandia1'>
+       <h3>PLAINTIFFS in the Case:</h3>
+        <h4>Dandia</h4>
+        <p>Rahman sent Dandia a friend request, asking if there were "any events or anything" that he could attend. This initial facebook contact gave Rahman access to FSNYC posts, events, and the ability to develop a personal relationship with Dandia.</p>
+        <img src="http://imgur.com/VIOoYrY.png" alt="Masjid At-Taqwa Mosque" style="width:200px;height:200px;">
+    </section>
+    <section id='Dandia2'>
+       <h3>PLAINTIFFS in the Case:</h3>
+        <h4>Dandiay</h4>
+        <p>On April 13, Dandia invited 25 young people for a meeting about FSNYC. Rahman shared a photo of the group, which had been posted on facebook, with the NYPD. Later, Rahman told Dandia that he would help raise money for the organization. Infiltrating the charity group, an important social and religious component of Masjid Omar's programming, Rahman contributed to criminalizing the very basic principles of Dandia and friends' faith.  </p> <p>   When Dandia learned that an informant had likely iniltrated FSNYC, he decided not to resign because he knew he had done nothing wrong. Yet the presence of the informant, regardless of Dandia's actual actions, was enough to make Dandia pull back from FSNYC. It corrupted the cohesion and productivity of the group, as members quit or became recalcitrant. </p>
+        <img src="http://imgur.com/Jp2jbSi.png" alt="Masjid At-Taqwa Mosque" style="width:200px;height:200px;">
+    </section>
+    <section id='Dandia3'>
+       <h3>PLAINTIFFS in the Case:</h3>
+        <h4>Dandiay</h4>
+        <p>Rahman initiated political discussions with members of Muslims Giving Back after Friday prayers. On one occasion, he asked what people thought about the attacks on the United States consulate in Benghazi. One of Dandia's friends was surprised by the topic, and several young men left. With a small group of young people, Rahman moved inside the mosque. He pressed the question, also asking about the Syrian revolution. People became uncomfortable, and postulated that he was a spy. </p>
+        <p>On October 2, 2012, Rahman posted a facebook message revealing that he had been employed as an informant to spy on Muslim communities for the NYPD. Even though Dandia and his peers in Muslims Giving Back had not done anything wrong, much less criminal, the knowledge that the group had been spied on gave them the appearance of criminality. A religious leader at Masjid Omar asked Dandia to remove Muslims Giving Back bulletins, and said that the organization could not continue to ask community members or donations after services, which was a major source of their budget for buying food for the community and paying or storage space for food donations. Police surveillance effectively squashed the efficacy of the organization, which as of 2012 was only able to meet in front of the mosque. They stopped posting photos on social media, as it was reveleaed that previous photos had been shared with the NYPD. Rahman's presence alone served to criminalize and stigmatize the charity. </p><img src="http://imgur.com/RgD4dvO.png" alt="Masjid At-Taqwa Mosque" style="width:200px;height:200px;">
+    </section>
+    <section id='Dandia4'>
+       <h3>PLAINTIFFS in the Case:</h3>
+        <h4>Dandiay</h4>
+        <p>Dandia invited Rahman over to his family's house. Once, Rahman even slept over and ate dinner with Dandia's family.</p>
+    </section>
+   <section id='end'>
+       <h3> Explore the Case further</h3>
+        <h4>Click links on the sidebar</h4>
+        <p>Download the Documents</p>
+        <br></br> <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+    </section>
+        <small id="citation">
+            Adapted from <a href='http://www.gutenberg.org/files/2346/2346-h/2346-h.htm'>Project Gutenberg</a>
+        </small>
+    </section>
+</div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoicmdmMjExNyIsImEiOiJjajF2ZG5mM2cwMDAxMnJwYWg3c2JndjZ5In0.20rHgdiQ8qf4IGDGi9db4Q';
+var map = new mapboxgl.Map({
+    style: 'mapbox://styles/mapbox/dark-v9',
+    center: [-74.0066, 40.7135],
+    zoom: 15,
+    pitch: 45,
+    bearing: -17.6,
+    container: 'map'
+});
+
+// the 'building' layer in the mapbox-streets vector source contains building-height
+// data from OpenStreetMap.
+map.on('load', function() {
+    map.addLayer({
+        'id': '3d-buildings',
+        'source': 'composite',
+        'source-layer': 'building',
+        'filter': ['==', 'extrude', 'true'],
+        'type': 'fill-extrusion',
+        'minzoom': 15,
+        'paint': {
+            'fill-extrusion-color': '#aaa',
+            'fill-extrusion-height': {
+                'type': 'identity',
+                'property': 'height'
+            },
+            'fill-extrusion-base': {
+                'type': 'identity',
+                'property': 'min_height'
+            },
+            'fill-extrusion-opacity': .6
+        }
+    });
+});
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/dark-v9',
+    center: [-73.953616, 40.681097],
+    zoom: 15.5,
+    bearing: 27,
+    pitch: 45
+});
+
+var chapters = {
+    'baker': {
+        bearing: 0,
+        center: [-73.953616, 40.681097],
+        zoom: 9,
+        pitch: 20
+    },
+    'court': {
+        duration: 6000,
+        center: [-73.989099, 40.696990],
+        bearing: 270,
+        zoom: 16.3,
+        pitch: 35
+    },
+    'nypdint': {
+        bearing: 90,
+        center: [-74.015920, 40.711401],
+        zoom: 16,
+        speed: 0.6,
+        pitch: 45
+    },
+    'nypdpt79': {
+        bearing: 90,
+        center: [-73.944845, 40.688825],
+        zoom: 16.7
+    },
+    'Masjida1': {
+        bearing: 220,
+        center: [-73.953491, 40.680560],
+        zoom: 18.3,
+        pitch: 50
+    },
+    'Masjida2': {
+        bearing: 220,
+        center: [-73.953491, 40.680560],
+        zoom: 18.3,
+        pitch: 50
+    },
+      'nypdpt62': {
+        bearing: 0,
+        center: [-74.0031, 40.60248],
+        zoom: 18.3
+    },
+    'Raza1': {
+        bearing: 255,
+        center: [-73.996323, 40.597518],
+        zoom: 18.3,
+        pitch: 50,
+        speed: 0.5,
+        useImage: true,
+        src: "http://imgur.com/gSOdmuG.png"
+    },
+      'Raza2': {
+        bearing: 255,
+        center: [-73.996323, 40.597518],
+        zoom: 18.3,
+        pitch: 50,
+        speed: 0.5,
+        useImage: true,
+        src: "http://imgur.com/Gpy3WGo.png",
+        left: "300px"
+
+    },
+      'Raza3': {
+        bearing: 255,
+        center: [-73.996323, 40.597518],
+        zoom: 18.3,
+        pitch: 50,
+        speed: 0.5,
+        useImage: true,
+        src: "http://imgur.com/UQKBLjk.png",
+        left: "100px"
+    },
+      'Raza4': {
+        bearing: 255,
+        center: [-73.996323, 40.597518],
+        zoom: 18.3,
+        pitch: 50,
+        speed: 0.5,
+        
+    },
+
+      'Raza5': {
+        bearing: 255,
+        center: [-73.996323, 40.597518],
+        zoom: 18.3,
+        pitch: 50,
+        speed: 0.5,
+        
+    },
+      'Raza6': {
+        bearing: 255,
+        center: [-73.996323, 40.597518],
+        zoom: 18.3,
+        pitch: 50,
+        speed: 0.5
+    },
+    'eli1': {
+        bearing: 180,
+        center: [-73.953616, 40.681097],
+        zoom: 13.5,
+        pitch: 45
+    },
+    'eli2': {
+        bearing: 90,
+        center: [-74.013159, 40.705964],
+        zoom: 17.3,
+        pitch: 40
+    },
+    'eli3': {
+        bearing: 90,
+        center: [-73.961723, 40.581454],
+        zoom: 16.5,
+        pitch: 20
+    },
+    'Dandia1': {
+        bearing: 90,
+        center: [-73.961723, 40.581454],
+        zoom: 16,
+        pitch: 40
+     },
+    'Dandia2': {
+        bearing: 90,
+        center: [-73.961723, 40.581454],
+        zoom: 18,
+        pitch: 40
+    },
+    'Dandia3': {
+        bearing: 90,
+        center: [-73.961723, 40.581454],
+        zoom: 18,
+        pitch: 40
+    },
+    'Dandia4': {
+        bearing: 90,
+        center: [-73.961723, 40.581454],
+        zoom: 18,
+        pitch: 40
+    },
+    'end': {
+        bearing: 90,
+        center: [-73.961723, 40.581454],
+        zoom: 20,
+        pitch: 40
+    },
+
+};
+
+// On every scroll event, check which element is on screen
+window.onscroll = function() {
+    var chapterNames = Object.keys(chapters);
+    for (var i = 0; i < chapterNames.length; i++) {
+        var chapterName = chapterNames[i];
+        if (isElementOnScreen(chapterName)) {
+            setActiveChapter(chapterName);
+            break;
+        }
+    }
+};
+
+var activeChapterName = 'baker';
+function setActiveChapter(chapterName) {
+    if (chapterName === activeChapterName) return;
+
+    map.flyTo(chapters[chapterName]);
+     if (chapters[chapterName].useImage) {
+        $( "#hoverImage" ).attr("src",chapters[chapterName].src);
+        $( "#hoverImage" ).show(1000);
+
+        var cssLeft = chapters[chapterName].left || "150px"
+        $( "#hoverImage" ).css('left', cssLeft)
+
+        var cssTop = chapters[chapterName].left || "800px"
+        $( "#hoverImage" ).css('top', cssTop)
+
+        var cssHeight = chapters[chapterName].height || "300"
+        $( "#hoverImage" ).css('height', cssHeight)
+    }
+
+    else {
+        $( "#hoverImage" ).hide(1000)
+    }
+    document.getElementById(chapterName).setAttribute('class', 'active');
+    document.getElementById(activeChapterName).setAttribute('class', '');
+
+    activeChapterName = chapterName;
+}
+
+function isElementOnScreen(id) {
+    var element = document.getElementById(id);
+    var bounds = element.getBoundingClientRect();
+    return bounds.top < window.innerHeight && bounds.bottom > 0;
+}
+
+</script> -->
+
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!-- Urban Lanugage Ecologies
+     Center for Spatial Research
+
+================================================================= -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <title> Urban Language Ecologies</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- optimize for search ... student name ? -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- boostrap - TODO: use local for performance -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link type="text/css" rel="stylesheet" href="http://fast.fonts.net/cssapi/c28915cb-7a1f-477c-9084-e9e755ede452.css"/>
+
+  <!-- TODO - optimize and consolidate files -->
+  <link href='css/conflict_main.css' rel='stylesheet' />
+  <link href='css/conflict_course.css' rel='stylesheet' />
+  <link href='css/framing-footnotes.css' rel='stylesheet' />
+  <link href='css/projectsite.css' rel='stylesheet' />
+  <link href='css/csr.css' rel='stylesheet'/>
+</head>
+
+<body>
+<div>
+  <nav class="navbar navbar-custom navbar-fixed-top" id="aleppo-nav" role="navigation">
+      <div class="container-fluid">
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+              <i class="fa fa-bars"></i>
+              </button>
+              <a class="navbar-brand page-scroll" href="index.html">
+                  Urban Language Ecologies
+              </a>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+              <ul class="nav navbar-nav">
+                  <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                  <li class="hidden">
+                      <a href="index.html"></a>
+                  </li>
+                  <li>
+                      <a href="index.html">About</a>
+                  </li>
+                  <li>
+                      <a href="index.html#caseStudies">Projects</a>
+                  </li>
+                  <li>
+                      <a href="index.html#people">People</a>
+                  </li>
+              </ul>
+          </div>
+          <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container -->
+  </nav>
+</div>
+  <div class="c4sr-wrapper">
+  <div class="container main">
+    <div class="row" style="height:55px">
+      <div class="col-md-12">
+        <!-- <h5><a href="index.html">Conflict Urbanism Aleppo</a></h5>
+        <h5>UNOSAT Damage Report Update</h5>
+        <div class="img-padding">
+          <img src="img/UNOSAT_ALEPPO.png" class="img-responsive">
+        </div> -->
+      </div>
+    </div>
+<div class="row">
+  <div class="col-md-6 body-text">
+    <h4>Beyond the Census:<br/>Languages of Queens</h4>
+  </div>
+</div>
+<div class="row">
+  <!-- menu -->
+  <div class="col-md-3 scrollspy">
+    <div id="sticky-menu ">
+      <!-- <ul id="nav" class="nav c4sr-nav" data-offset-top="30"><h4>Beyond the Enclave</h4>
+      </ul> -->
+
+      <ul id="nav" class="nav c4sr-nav" data-offset-top="30">
+        <!-- <h2>Beyond the <br/>Enclave</h2> -->
+        <li><a href="#intro"><img src="img/dot-1.png" />Introduction</a></li>
+        <li><a href="#data"><img src="img/dot-1.png" />Data</a></li>
+        <li><a href="#design"><img src="img/dot-1.png" />Design Strategies</a></li>
+        <li><a href="#conclusion"><img src="img/dot-1.png" />Conclusion</a></li>
+        <li><a href="http://beyond-the-census.herokuapp.com/"><img src="img/dot-1.png" />Project Site</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- main -->
+  <div class="col-md-6 body-text">
+    <h5
+     <h5 id="intro"></h5><br/>
+        New York City is often considered the most linguistically diverse place in the world, and nowhere is that more apparent than in Queens. For generations, Queens has attracted immigrant families with its low rent and access to global communities. The results of this migration is a multilingual community where languages from across the globe can be found. It has also created the unique situation where some endangered languages find their last home in New York City, carried in the minds of the last speakers. <a href ="http://beyond-the-census.herokuapp.com/">Beyond the Census: Languages of Queens</a> traces those connections, focusing on how the local connects to the global and back to the local. <br/><br/>
+
+<img src="img/btc2.png" class="img-responsive"><div class="caption"> <br/>Some Minangkabau speakers live in Elmhurst, though the language originates in North Sumatra</div>
+
+        <br/><br/>
+The languages we speak, especially those we speak at home, are deeply tied to identity and community. Whether in accent or language, our words give us away as belonging to a certain speech community, connecting us with some, and dividing us from others. Though invisible, languages tie people and places together. And yet, in a highly multilingual, urban setting, what does that mean for the people and the place? <br/><br/>
+
+Drawing on a qualitative and often anecdotal dataset provided by the Endangered Language Alliance, this project seeks to answer this question, illustrating the ways that language connects Queens to the world and where the world finds its home in Queens. <br/><br/>
+
+This project presented some very specific design challenges as well. First, given the qualitative and anecdotal nature of the dataset, standard approaches to representing the languages would not be applicable. And yet, there is a quantitative component that we sought to encode without taking away from the qualitative.<br/><br/>
+
+        <h5 id="data">Data</h5> <br/>
+        <img src="img/btc1.png" class="img-responsive"><div class="caption"> <br/>Main page showing all of the languages in this dataset</div>
+
+        <br/><br/>
+
+The data for the Queens Language map was provided by the Endangered Language Alliance - it documents (in a non-comprehensive, anecdotal way) sites throughout Queens where they know certain languages are spoken.<br/><br/>
+
+These language-place pairs vary considerably in both specificity and scale, ranging from entire neighborhoods to street corridors or intersections, to storefront churches, community centers and cafes, where one or more of the nearly 200 languages in the dataset are spoken.<br/><br/>
+
+Beyond this variable geographic specificity, some of the data points even lack fixed geographic locations, representing single individuals, food carts, or traveling performance groups known to the ELA.<br/><br/>
+
+In order to better visualize the data, and to ensure consistency of structure as new data was added, we split the table into multiple collections, adding additional information to the records when possible.
+<br/><br/>
+These collections were as follows:<br/><br/>
+
+<ul>
+<li>Languages</li>
+  Added countries and continents spoken, geographic point of origin based on additional data from the Glottolog language database. Also assigned probable linugua francas for sorting purposes.<br/><br/>
+<li>Institutions</li>
+  Assigned point geometry from addresses where available, otherwise manually by online search for institution, related events and individuals etc.<br/><br/>
+<li>Continents</li>
+  Assigned polygon geometry from geojson world map in the public domain.<br/><br/>
+<li>Countries</li>
+  Assigned polygon geometry from geojson world map in the public domain.<br/><br/>
+<li>Neighborhoods</li>
+  Assigned polygon geometry from NYC Neighborhood Tabulation Areas, available from city open data portal.<br/><br/>
+</ul>
+The bulk of the data cleaning, linking, and importing to the database was done using node.js scripts.
+
+<h5 id="design">Designing the Map</h5>
+<b>Variable Geographic Specificity & Map Markers</b><br/>
+Through an iterative design process the project developed a visual language which aims to work within the productive contraints of this anecdotal dataset. To bridge between the wide range of geographic specificity encoded for each language a series of map markers was developed that while sharing certain visual elements, also incorporated unique features. The individual colored squares represent institutions where the actual address or location information is visible, and the small rectangular grids of colored squares represent the total and variety of different languages spoken in a given neighborhood. This strategy aims to accurately represent the geographic information in the dataset while avoid issues with double-representation.<br/><br/>
+
+Besides representing sites of language practice in a static way, these map markers also function as interactive elements, allowing the user to obtain more information about one of the languages in the cluster, or the institution/geography in question.<br/><br/>
+
+      <img src="img/astoria.png" class="img-responsive"><div class="caption"> <br/>Language spoken in Astoria</div>
+
+        <br/><br/>
+
+<b>The Globe</b><br/>
+Since each language entry carries with it information about its point of origin in the world and other regions where there are high concentrations of speakers, the map features a globe where these global-scale sites of practice can be visualized. Each site is rendered using a marker from the same set used in the borough map, creating a visual correspondence between local and global sites of practice.<br/><br/>
+
+      <img src="img/btc3.png" class="img-responsive"><div class="caption"> <br/>Vietnamese originates in Vietnam, but there are many speakers in Australia, the United States, and the Czech Republic.</div>
+
+        <br/><br/>
+
+<b>List/Legend</b><br/>
+Using color alone, or even a combination of color and symbols, distinguishing between each of the languages in a list of almost 200 items is impossible. The map features a list of all the languages as a separate panel, grouped by continent of origin (each of which is assigned a primary color) and further sorted by level of language endangerment (which determines the lightness of the continent base color). Each language, labeled in the list, can be clicked to highlight its sites of practice in the map of queens and on the globe.
+        <br/><br/>
+
+        <img src="img/btc4.png" class="img-responsive"><div class="caption"> <br/>List showing only endangered languages, sorted using the slider.</div>
+
+<h5></h5>
+
+<b>Planning for Crowdsourcing</b><br/>
+Throughout our conversations with the ELA, we discussed the idea of user-generated data being added to the map. While the preliminary database generated by the ELA through their fieldwork would form the basis for the entire map at first, the possibility that users could enter their own languages, landmarks, and origins at a later time promised to build a much more expansive and detailed dataset over time.<br/><br/>
+
+To facilitate the expansion of this project, we sought to build a platform capable of receiving new data from users in the future and ensuring a consistent structure and format.<br/><br/>
+
+<h5 id="conclusion">Conclusions</h5>
+
+Recently, Rebecca Solnit and Joshua Jelly-Schapiro edited a volume, "The Non-Stop Metropolis," which included a map also using a dataset provided by the Endangered Language Alliance, entitled, "Mother Tongues and Queens" (Molly Roy and Mirissa Neff). This map identified many of the languages represented here. While there are a great many similarities between that map and this one, they serve vastly different purposes, and have radically different end results.<br/><br/>
+
+This map is meant to be played with, it invites users to zoom in and out, explore the areas around the languages, and understand the relationship between the languages and each other, how they are situated, where they meet, and where they don't. We have also included what is missing, highlighting that so little is known about African languages in Queens, though we can be fairly certain that the ones we included are there.<br/><br/>
+
+Likewise, by layering the glottolog data, endangerment status, and additional information, we have offered users the opportunity to interact with the languages of Queens, ask questions about them, and find out more information. We invite users to play, and in many ways, find answers to their own questions. This map can be viewed through a region of origin lens, an endangerment lens, or a global lens. Rather than being presented with one static story, the user is invited to go deeper, following links to Wikipedia and Ethnologue.<br/><br/>
+
+Ultimately, this interactive, web-based format gave us the chance to offer the user and outlet for their curiosity about languages in Queens, illustrating not only the staggering diversity of the borough as a whole, but the hotspots where people from different geographic regions come together. In the future, we hope that others will be able to add their own story to this map, and share their language with the world.<br/><br/>
+
+Project Team: Laura Kurgan, Michelle McSweeney, Carsten Rodin, Tola Oniyangi, and Dare Brawley with the <a href= "http://elalliance.org/">Endangered Language Alliance</a> <br/><br/>
+
+
+        <a class="btn btn-default btn-block c4sr-button c4sr-big-button" href="http://c4sr.columbia.edu/urban-language-ecologies/#caseStudies">Return to Case Studies</a><br/><br/>
+
+</div>
+
+
+</div>
+<!-- end row -->
+
+  <footer class="footer c4sr-footer">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-3 c4sr-footer-id"><a href="http://c4sr.columbia.edu/" target="_blank">Center for Spatial Research<br/>Columbia University<br/></a><div class="cu-crown">
+                  <img src="img/cu-crown.jpg" />
+              </div></div>
+              <div class="col-md-3">Graduate School of Architecture,<br/>Planning and Preservation<br/>Schermerhorn Hall Extension #654<br/>1172 Amsterdam Avenue<br/>New York, NY 10027<br/>
+              </div>
+              <div class="col-md-3"><a class="active" href="mailto:info@c4sr.columbia.edu">info@c4sr.columbia.edu</a><br/>Tel +1 212 555 1212<br/>Fax +1 212 555 1213</div>
+              <div class="col-md-3"><a href="https://twitter.com/c4sr_columbia" target="_blank">Follow us on Twitter</a><br/><a href="mailto:c4sr-updates-join@lists.columbia.edu" target="_blank">Sign up for our Mailing List</a><br/></div>
+          </div>
+      <!--
+      <h5><center> Center for Spatial Research, Columbia University</center></h5> -->
+    </div>
+</footer>
+
+</div>
+</div>
+<!-- TODO optimize this -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
+
+<!-- TODO optimize, minify inline -->
+<script>
+$(document).ready(function() {
+
+  // bootstrap affix menu
+  $('#nav').affix({
+    offset: {
+      top: $('#nav').offset().top
+    }
+  });
+
+  // footnote logic
+  $('.footnote').each(function() {
+
+    /*
+    var f = $(this).attr('class').split(" ")[1];
+    var num = f.split("-")[1];
+    console.log(num);
+    var el = $('.' + f);
+
+    //var top = $('.' + f).position().top - 10;
+
+    console.log(el);
+    /*
+    var num_c = num - 1;
+    var offset = num_c * 88;
+    var top_n = top - offset;
+
+    // align footnote to position
+    $('.footnote-ref-' + num).css({
+      top: top_n
+    });
+    var final_p = $('.footnote-ref-' + num).position().top;
+    console.log(final_p);
+
+    */
+
+  });
+
+
+  // if window small then
+  if ($("ul.c4sr-nav").css("display") == "none" ){
+        $('.footnote-ref').each(function() {
+          $(this).css({
+            'top': 0,
+            'margin-bottom': '10px'
+          });
+        });
+  }
+
+
+});
+</script>
+<!-- Footer TODO fix formatting -->
+<!-- <footer class="footer c4sr-footer">
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-md-3 c4sr-footer-id"><a href="http://c4sr.columbia.edu/" target="_blank">Center for Spatial Research<br/>Columbia University<br/></a><div class="cu-crown">
+                <img src="img/cu-crown.jpg" />
+            </div></div>
+            <div class="col-md-3">Graduate School of Architecture,<br/>Planning and Preservation<br/>Schermerhorn Hall Extension #654<br/>1172 Amsterdam Avenue<br/>New York, NY 10027<br/>
+            </div>
+            <div class="col-md-3"><a class="active" href="mailto:info@c4sr.columbia.edu">info@c4sr.columbia.edu</a><br/>Tel +1 212 555 1212<br/>Fax +1 212 555 1213</div>
+            <div class="col-md-3"><a href="https://twitter.com/c4sr_columbia" target="_blank">Follow us on Twitter</a><br/><a href="mailto:c4sr-updates-join@lists.columbia.edu" target="_blank">Sign up for our Mailing List</a><br/></div>
+        </div>
+</footer> -->
+</body>
+</html>

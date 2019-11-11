@@ -1,0 +1,253 @@
+body{
+	font-family: "UniversNextW01-Regular", Helvetica, Arial, sans-serif;
+    font-weight: 800;
+  	color: rgba(35, 31, 32, 0.8)
+}
+
+g#text text, g#txt text{
+	font-family: "UniversNextW01-Regular", Helvetica, Arial, sans-serif !important;
+	font-weight: 200 !important;
+	color: rgba(0,0,0,0.7) !important;
+}
+
+/*FOR CSS GRID */
+	/*To make them next to each other, we just need to float them and apply widths*/
+	[class*='col-'] {
+	  float: left;
+	}
+	#leftPanel.col-1-4 {
+	  padding-left: 10px;
+	  width: 15%;
+	  position: fixed;
+/*	  top: 50%;
+      transform: translateY(-50%);*/
+      /* two lines above center vertically but its kinda wonky now*/
+	}
+	#bodyPanel.col-2-4{
+	  width: 85%;
+	  float: right;
+	}
+	/*The parent element will collapse to zero height since it has only floated children. Let's fix that by clearing it.*/
+	.grid:after {
+	  content: "";
+	  display: table;
+	  clear: both;
+	}
+	*, *:after, *:before {
+	  -webkit-box-sizing: border-box;
+	  -moz-box-sizing: border-box;
+	  box-sizing: border-box;
+	}
+	[class*='col-'] {
+	  padding-right: 20px;
+	}
+	[class*='col-']:last-of-type {
+	  padding-right: 0;
+	}
+
+#visMono, #visBi, #VisLib, #VisLib_top5, #visMultiBuilding, #visMultiFoodTrucks, #visMultiStreetFair, #barChart, .thumbnail {
+  	cursor: pointer;
+}
+#visMono, #visBi, #VisLib, #VisLib_top5, #visMultiBuilding, #visMultiFoodTrucks, #visMultiStreetFair{
+  	margin-left: 10px;
+  	margin-right: 10px;
+}
+
+a{
+	color: inherit !important;
+	text-decoration: none !important;
+}
+
+/*buildings PAGE */
+	/* text */
+		h1.titleTotal, h1.titleTotal a{
+		    font-size: 1.5em;
+		    text-transform: capitalize;
+		    background-color: rgba(0,0,0,1);
+		    color: white;
+		    padding: 10px;
+		    text-align: left;
+		    margin: 10px;
+		}
+		h1.titleMultiBuilding, h1.titleMono, h1.titleBi, h1.titleLibrary, h1.titleMultiStreetFair, h1.titleMultiFoodTrucks {
+		    font-size: 1.25em;
+		    text-transform: capitalize;
+		    background-color: rgba(0,0,0,0.8);
+		    color: white;
+		    padding: 10px;
+		    margin: 10px;
+		}
+		h2.subtitleLibrary {
+		    font-size: 1em;
+		    text-transform: capitalize;
+		    background-color: rgba(0,0,0,0.7);
+		    color: white;
+		    padding: 10px;
+		    margin: 10px;
+		    width: 18%;
+		}
+		p#introText{
+			font-size: 1em;
+			vertical-align: top;
+			display: inline-block;
+			margin: auto;
+			width: 75%;
+			box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+			padding: 20px;			
+			border: 1px solid #ebebeb;
+			margin-left: 10px;
+   			margin-right: 10px;
+		}
+
+		text#basicText, p#basicText {
+			box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+			font-size: 1em;
+			color: black;
+			padding: 2%;
+			margin-top: 0;
+			margin-right: 10px;
+			margin-left: 10px;
+			width: 75%;
+		}
+
+/*		.introTextBox {
+			box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+			padding: 20px;			
+			border: 1px solid #ebebeb;
+			margin-left: 10px;
+   			margin-right: 10px;
+		}*/
+
+		text.extraInfo {
+			margin: auto;
+		    width: 50%;
+		    font-size: .8em;
+		    right: 12px;
+		    position: absolute;
+		    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+		    padding: 15px;
+		    background-color: rgba(255,255,255,0.9);
+		}
+
+		.barText {
+			opacity: 0;
+		}
+		.barTextClicked, .barTextHovered, .barText:hover {
+			opacity: 1;
+		}
+
+
+	/*toggle images at bottom*/
+		ul.thumbnail {
+			list-style-type: none;
+			margin-top: auto;
+			padding: 0;
+		}
+
+		ul.thumbnail img {
+		   -webkit-filter: grayscale(100%);
+		   -moz-filter: grayscale(100%);
+		   filter: grayscale(100%);
+		   transition: all 0.25s ease;
+		 }
+
+		ul.thumbnail img:hover {
+		   -webkit-filter: grayscale(0%);
+		   -moz-filter: grayscale(0%);
+		   filter: grayscale(0%);
+		 }
+		ul.thumbnail img{
+			width:100%;
+			height: auto;
+			border: 1px solid #ebebeb;
+			padding: 10px;
+			box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+		}
+		.thumbnailSelected{
+			opacity: 1 !important;
+		}
+
+	/*side boxes*/
+		.thumbnail.col-1-4{
+			height: 100%;
+			max-width: 25%;
+		    padding: 2% 2% 2% 2%;
+		    margin: 0;
+		    overflow: auto;
+			position: fixed !important;
+		    left: 0;
+		    color: rgba(0,0,0,.8); /*textcolor*/
+		    font-weight: 800;
+		}
+		.thumbnail.col-1-4 text{
+			stroke-width: 0;
+		}
+
+
+	/*dividing line*/
+		hr{
+			width: 100%;
+			border-top: 1px solid black !important;
+		}
+
+	/*side*/
+		#barChart{
+			overflow-x: hidden;
+			top: 200px !important;
+		}
+
+	/*body*/
+		.bookSelected{
+		    transform: translate(-10px, 30px); /*x,y*/
+		    transition: .35s linear;
+		}
+		.bookNotSelected{
+		    /*transform: translate(10px, -30px); */
+		    transition: .35s linear;
+		}
+
+@media only screen and (max-width: 480px) {
+    h1.titleTotal , h1.titleTotal a{
+        font-size: 1em;
+    }
+    h2.subtitleLibrary {
+        font-size: .5em;
+        width: 35%;
+    }
+    p#introText, p#basicText{
+    	width: 95%;
+    	font-size: .5em;
+    	padding: 10px;
+    }
+    p.extraInfo, text.extraInfo {
+    	font-size: 6px;
+    	width: 80%;
+    	padding: 5px;
+    }
+    g#text text, g#txt text{
+    	font-size: .85em;
+    }
+	[class*='col-'] {
+    	padding-right: 0 !important;
+    }
+	h1.titleMultiBuilding, h1.titleMono, h1.titleBi, h1.titleLibrary, h1.titleMultiStreetFair, h1.titleMultiFoodTrucks {
+	    font-size: .85em;
+	}    
+}
+@media only screen and (min-width: 480px) and (max-width: 939px) {
+   
+    h2.subtitleLibrary {
+        width: 50%;
+    }
+  	p#introText, p#basicText{
+    	width: 95%;
+    }
+}
+@media only screen and (min-width: 940px) and (max-width: 1200px) {
+   
+    h2.subtitleLibrary {
+        width: 25%;
+        padding: 10px;
+    }
+  	
+}

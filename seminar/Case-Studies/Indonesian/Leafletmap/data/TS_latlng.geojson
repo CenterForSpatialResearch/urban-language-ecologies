@@ -1,0 +1,14 @@
+{
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 1, "Category": "Commercial", "Name": "Queens Night Market", "xcoord": -73.850714104745904, "ycoord": 40.747959472683092, "lat": 40.74795947, "lng": -73.8507141, "Video": null }, "geometry": { "type": "Point", "coordinates": [ -73.85071410474589, 40.747959472683085 ] } },
+{ "type": "Feature", "properties": { "id": 2, "Category": "Religious", "Name": "First Presbyterian Church", "xcoord": -73.839163175567819, "ycoord": 40.723340532199146, "lat": 40.72334053, "lng": -73.8391631, "Video": null }, "geometry": { "type": "Point", "coordinates": [ -73.839163175567819, 40.723340532199146 ] } },
+{ "type": "Feature", "properties": { "id": 3, "Category": "Community", "Name": "East Village Community Coalition", "xcoord": -73.980053709073616, "ycoord": 40.726365875855159, "lat": 40.72636588, "lng": -73.9800537, "Video": null }, "geometry": { "type": "Point", "coordinates": [ -73.980053709073616, 40.726365875855159 ] } },
+{ "type": "Feature", "properties": { "id": 4, "Category": "Religious", "Name": "Gustavus Adolphus Lutheran Church", "xcoord": -73.984082673171258, "ycoord": 40.738549895297822, "lat": 40.7385499, "lng": -73.9840826, "Video": null }, "geometry": { "type": "Point", "coordinates": [ -73.984082673171258, 40.738549895297822 ] } },
+{ "type": "Feature", "properties": { "id": 5, "Category": "Religious", "Name": "Islamic Center at NYU", "xcoord": -73.998066998097769, "ycoord": 40.730082004836149, "lat": 40.730082, "lng": -73.998067, "Video": null }, "geometry": { "type": "Point", "coordinates": [ -73.998066998097769, 40.730082004836149 ] } },
+{ "type": "Feature", "properties": { "id": 6, "Category": "Religious", "Name": "NYU Global Center", "xcoord": -73.998177887017988, "ycoord": 40.729969963780285, "lat": 40.72996996, "lng": -73.9981778, "Video": "https:\/\/www.youtube.com\/watch?v=Ytbm9zRxTds&t=7s" }, "geometry": { "type": "Point", "coordinates": [ -73.998177887017988, 40.729969963780285 ] } },
+{ "type": "Feature", "properties": { "id": 7, "Category": "Religious", "Name": "Earl Hall, Columbia University", "xcoord": -73.96272423503838, "ycoord": 40.80860433798189, "lat": 40.80860434, "lng": -73.9627242, "Video": null }, "geometry": { "type": "Point", "coordinates": [ -73.96272423503838, 40.80860433798189 ] } },
+{ "type": "Feature", "properties": { "id": 8, "Category": "Religious", "Name": "The Riverside Church", "xcoord": -73.963180111709917, "ycoord": 40.811849609263412, "lat": 40.81184961, "lng": -73.9631801, "Video": null }, "geometry": { "type": "Point", "coordinates": [ -73.963180111709917, 40.811849609263412 ] } }
+]
+}
